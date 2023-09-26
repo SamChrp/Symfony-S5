@@ -18,6 +18,15 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: MovieRepository::class)]
 #[ApiResource(
+    description: 'A movie with actors.',
+    operations: [
+        new Get(uriTemplate: '/movie/{id}'),
+        new GetCollection(),
+        new Post(),
+        new Put(),
+        new Patch(),
+        new Delete(),
+    ],
     normalizationContext: [
         'groups' => ['movie:read']
     ],
@@ -27,30 +36,31 @@ class Movie
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['movie:read'])]
+    #[Groups(['movie:read, actor:read, category:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read'])]
+    #[Groups(['movie:read, actor:read, category:read'])]
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read'])]
+    #[Groups(['movie:read, actor:read, category:read'])]
     private ?string $releaseDate = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read'])]
+    #[Groups(['movie:read, actor:read, category:read'])]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read'])]
+    #[Groups(['movie:read, actor:read, category:read'])]
     private ?string $duration = null;
 
     #[ORM\ManyToOne(inversedBy: 'movies')]
-    #[Groups(['movie:read'])]
+    #[Groups(['movie:read, actor:read'])]
     private ?Category $category = null;
 
     #[ORM\ManyToMany(targetEntity: Actor::class, inversedBy: 'movies')]
+    #[Groups(['movie:read, category:read'])]
     private Collection $actor;
 
     public function __construct()

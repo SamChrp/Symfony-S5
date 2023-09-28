@@ -14,6 +14,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 #[ORM\Entity(repositoryClass: MovieRepository::class)]
@@ -41,6 +42,10 @@ class Movie
 
     #[ORM\Column(length: 255)]
     #[Groups(['movie:read, actor:read, category:read'])]
+    #[Assert\length( min: 2,
+        max: 5,
+        minMessage: 'Your first name must be at least  characters long',
+        maxMessage: 'Your first name cannot be longer than  characters',)]
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]

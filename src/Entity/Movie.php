@@ -42,7 +42,7 @@ class Movie
 
     #[ORM\Column(length: 255)]
     #[Groups(['movie:read, actor:read, category:read'])]
-    #[Assert\length( min: 2,
+    #[Assert\Length( min: 2,
         max: 5,
         minMessage: 'Your first name must be at least  characters long',
         maxMessage: 'Your first name cannot be longer than  characters',)]

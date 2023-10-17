@@ -37,11 +37,10 @@ class Movie
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['movie:read, actor:read, category:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read, actor:read, category:read'])]
+    #[Groups(['movie:read'])]
     #[Assert\Length( min: 2,
         max: 5,
         minMessage: 'Your first name must be at least  characters long',
@@ -49,23 +48,23 @@ class Movie
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read, actor:read, category:read'])]
+    #[Groups(['movie:read'])]
     private ?string $releaseDate = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read, actor:read, category:read'])]
+    #[Groups(['movie:read'])]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read, actor:read, category:read'])]
+    #[Groups(['movie:read'])]
     private ?string $duration = null;
 
     #[ORM\ManyToOne(inversedBy: 'movies')]
-    #[Groups(['movie:read, actor:read'])]
+    #[Groups(['movie:read'])]
     private ?Category $category = null;
 
     #[ORM\ManyToMany(targetEntity: Actor::class, inversedBy: 'movies')]
-    #[Groups(['movie:read, category:read'])]
+    #[Groups(['movie:read'])]
     private Collection $actor;
 
     public function __construct()

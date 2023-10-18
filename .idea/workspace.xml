@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71af5375-5ea2-40bf-852b-b2d2ff2b89d2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Symfony-S5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Symfony-S5.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +240,8 @@
       <workItem from="1695230456960" duration="1415000" />
       <workItem from="1695631523810" duration="983000" />
       <workItem from="1695967932184" duration="5980000" />
-      <workItem from="1697442482178" duration="12414000" />
+      <workItem from="1697442482178" duration="15845000" />
+      <workItem from="1697632606803" duration="2397000" />
     </task>
     <servers />
   </component>

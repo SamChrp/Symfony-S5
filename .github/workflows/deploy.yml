@@ -17,7 +17,7 @@ jobs:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
         script: |
-          cd /home/mmi21g04/public_html/
+          cd /var/www/demo-sf
           git clone git@github.com:SamChrp/Symfony-S5.git
           cd Symfony-S5
           git pull

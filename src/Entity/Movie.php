@@ -40,7 +40,7 @@ class Movie
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read'])]
+    #[Groups(['movie:read', 'category:read'])]
     #[Assert\Length( min: 2,
         max: 5,
         minMessage: 'Your first name must be at least  characters long',

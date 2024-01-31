@@ -38,6 +38,9 @@ class Actor
     #[Groups(['actor:read'])]
     private ?Nationalite $nationalite = null;
 
+    #[ORM\ManyToOne(inversedBy: 'actors')]
+    private ?MediaObject $mediaObject = null;
+
     public function __construct()
     {
         $this->movies = new ArrayCollection();
@@ -107,6 +110,18 @@ class Actor
     public function setNationalite(?Nationalite $nationalite): static
     {
         $this->nationalite = $nationalite;
+
+        return $this;
+    }
+
+    public function getMediaObject(): ?MediaObject
+    {
+        return $this->mediaObject;
+    }
+
+    public function setMediaObject(?MediaObject $mediaObject): static
+    {
+        $this->mediaObject = $mediaObject;
 
         return $this;
     }

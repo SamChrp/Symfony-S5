@@ -30,6 +30,9 @@ class Category
     #[Groups(['category:read'])]
     private Collection $movies;
 
+    #[ORM\ManyToOne(inversedBy: 'categories')]
+    private ?MediaObject $mediaObject = null;
+
     public function __construct()
     {
         $this->movies = new ArrayCollection();
@@ -78,6 +81,18 @@ class Category
                 $movie->setCategory(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMediaObject(): ?MediaObject
+    {
+        return $this->mediaObject;
+    }
+
+    public function setMediaObject(?MediaObject $mediaObject): static
+    {
+        $this->mediaObject = $mediaObject;
 
         return $this;
     }

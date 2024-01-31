@@ -37,6 +37,7 @@ class Movie
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['movie:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]

@@ -6,6 +6,7 @@ use App\Repository\NationaliteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: NationaliteRepository::class)]
 class Nationalite
@@ -16,6 +17,7 @@ class Nationalite
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['actor:read'])]
     private ?string $intitule = null;
 
     #[ORM\OneToMany(mappedBy: 'nationalite', targetEntity: Actor::class)]

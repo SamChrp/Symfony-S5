@@ -43,7 +43,6 @@ class Movie
     #[ORM\Column(length: 255)]
     #[Groups(['movie:read', 'category:read', 'actor:read'])]
     #[Assert\Length( min: 2,
-        max: 5,
         minMessage: 'Your first name must be at least  characters long',
         maxMessage: 'Your first name cannot be longer than  characters',)]
     private ?string $title = null;

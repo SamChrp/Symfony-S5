@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71af5375-5ea2-40bf-852b-b2d2ff2b89d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/65b9fff261c49_fork:branche.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/CreateMediaObjectActionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/MediaObject.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/MediaObjectRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Serializer/Normalizer/MediaObjectNormalizer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/create_media_object/list.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/create_media_object_action/list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Symfony-S5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Symfony-S5.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Actor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Actor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Movie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,6 +181,8 @@
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
       <path value="$PROJECT_DIR$/vendor/blackfire/php-sdk" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -215,7 +202,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/upload",
+    "git-widget-placeholder": "develop",
     "last_opened_file_path": "/Users/sam/Documents/GitHub/Symfony-S5",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

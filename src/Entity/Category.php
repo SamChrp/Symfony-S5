@@ -12,9 +12,8 @@ use Symfony\Component\Serializer\Annotation\Groups;
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 #[ApiResource(
     normalizationContext: [
-        'groups' => ['category:read']
-    ],
-)]
+    'groups' => ['category:read']
+])]
 class Category
 {
     #[ORM\Id]
@@ -24,12 +23,15 @@ class Category
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['category:read'])]
+    #[Groups(['movie:read', 'category:read'])]
     private ?string $name = null;
 
     #[ORM\OneToMany(mappedBy: 'category', targetEntity: Movie::class)]
     #[Groups(['category:read'])]
     private Collection $movies;
+
+    #[ORM\ManyToOne(inversedBy: 'categories')]
+    private ?MediaObject $mediaObject = null;
 
     public function __construct()
     {
@@ -79,6 +81,18 @@ class Category
                 $movie->setCategory(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMediaObject(): ?MediaObject
+    {
+        return $this->mediaObject;
+    }
+
+    public function setMediaObject(?MediaObject $mediaObject): static
+    {
+        $this->mediaObject = $mediaObject;
 
         return $this;
     }

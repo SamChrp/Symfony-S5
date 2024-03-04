@@ -37,36 +37,38 @@ class Movie
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['movie:read, actor:read, category:read'])]
+    #[Groups(['movie:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read, actor:read, category:read'])]
-    #[Assert\length( min: 2,
-        max: 5,
+    #[Groups(['movie:read', 'category:read', 'actor:read'])]
+    #[Assert\Length( min: 2,
         minMessage: 'Your first name must be at least  characters long',
         maxMessage: 'Your first name cannot be longer than  characters',)]
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read, actor:read, category:read'])]
+    #[Groups(['movie:read'])]
     private ?string $releaseDate = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read, actor:read, category:read'])]
+    #[Groups(['movie:read'])]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['movie:read, actor:read, category:read'])]
+    #[Groups(['movie:read'])]
     private ?string $duration = null;
 
     #[ORM\ManyToOne(inversedBy: 'movies')]
-    #[Groups(['movie:read, actor:read'])]
+    #[Groups(['movie:read'])]
     private ?Category $category = null;
 
     #[ORM\ManyToMany(targetEntity: Actor::class, inversedBy: 'movies')]
-    #[Groups(['movie:read, category:read'])]
+    #[Groups(['movie:read'])]
     private Collection $actor;
+
+    #[ORM\ManyToOne(inversedBy: 'movies')]
+    private ?MediaObject $mediaObject = null;
 
     public function __construct()
     {
@@ -158,6 +160,18 @@ class Movie
     public function removeActor(Actor $actor): static
     {
         $this->actor->removeElement($actor);
+
+        return $this;
+    }
+
+    public function getMediaObject(): ?MediaObject
+    {
+        return $this->mediaObject;
+    }
+
+    public function setMediaObject(?MediaObject $mediaObject): static
+    {
+        $this->mediaObject = $mediaObject;
 
         return $this;
     }
